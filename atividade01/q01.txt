@@ -1,0 +1,8 @@
+1 - A classe é como se fosse a planta de uma casa, e possui características exigidas para a
+construção do modelo. Na classe se definem todos os elementos, e determina-se os possíveis estados
+dos objetos. 
+E o objeto é a casa pronta. No objeto, os elementos definidos na classe de fato estão presentes
+e atuantes. Dessa forma, na classe informa-se que o objeto terá um nome, e no objeto se diz qual 
+é esse nome.
+
+EX => A classe pode ser uma receita, e o objeto seria o bolo.

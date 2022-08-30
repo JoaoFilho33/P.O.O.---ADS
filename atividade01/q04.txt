@@ -1,0 +1,5 @@
+4 -
+a) Sim, para evitar fraudes ou criação de contas com outras coisas além de pessoas como titular.
+
+b) Não, pois para cada conta que essa pessoa viesse a ter, seria necessária a criação de mais
+atributos. Por isso a situação da letra a) é a mais viável para a situação.

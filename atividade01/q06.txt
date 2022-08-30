@@ -1,0 +1,2 @@
+6 - Em uma gameplay temos o personagem (objeto) que possui atributos como vida, mana, xp, nome, vestimentas. 
+Esse personagem possui atributos como correr, abaixar, pegar, atacar, conversar.

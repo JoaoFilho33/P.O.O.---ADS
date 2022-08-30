@@ -1,0 +1,8 @@
+3 - 
+Peso --> Academia, Hospital
+Tipo de CNH --> Busca de emprego como motorista
+Tipo Sanguineo --> Doação de Sanguineo
+Habilidade Destra --> Batedor de Basebol 
+Percentual de Gordura --> Fisiculturismo
+Saldo em Conta --> Efetuar uma compra 
+Etnia --> Universidades

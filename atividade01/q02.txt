@@ -1,0 +1,5 @@
+2 - Os atributos representam as características de um objeto.
+Já os métodos são a representação dos comportamentos desse objeto.
+
+Ex: Um objeto Jogador possui alguns atributos como: nome, numero, time, selecao.
+E métodos como: correr(), caminhar(), jogar(), apanhar().
