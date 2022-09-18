@@ -1,0 +1,7 @@
+3. Pesquise um exemplo na internet em que a tipagem dinâmica pode ser problemático.
+Quando se fala em vantagens da tipagem dinâmica, compara-se o tempo de compilação, que torna o ciclo de testes menos demorado. Porém isso 
+não faz mais tanto jus a fama nos dias atuais, pois a evolução dos compiladores trouxe grandes melhorias no quesito velocidade. Outro fato é a 
+menor verbosidade do código, porém essa vantagem tras problemas no longo-médio prazo, dificultando o entendimento e a manutenção do código. 
+
+Exemplo: 
+Um erros de produção, um método pode estar esperando um objeto "user" com um atributo "name", mas recebe em tempo de execução outro "user" que não possuía esse atributo.

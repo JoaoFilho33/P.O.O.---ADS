@@ -1,0 +1,3 @@
+1. Qual a diferença entre tipagem dinâmica e tipagem estática?
+No tipo estática a linguagem não permite alteração do tipo da variável depois de declarada;
+no tipo dinâmico a linguagem escolhe o tipo mais adequado de acordo com o valor atribuído.

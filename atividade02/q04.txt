@@ -1,0 +1,11 @@
+4. Pesquise e exemplifique com um exemplo porque dizemos que a linguagem C, mesmo tendo tipagem estática, possui tipagem fraca.
+A tipagem fraca está ligada a característica da linguegem converter automaticamente os tipos. 
+No caso da linguagem c, o sistema de tipos pode ser facilmente manipulado, pois pode-se fazer alterações diretamente nos bytes da memória.
+
+Ex:
+    int velocidade = 40;
+    float nova_velocidade = (float) velocidade;
+
+o tipo de dado deve ser explicitado, mas, não pode ser alterado na variável.
+Por isso, não se pode alterar o tipo da variável. Entretanto, uma nova variável pode ser criada com um novo tipo, fazendo casting para esse novo tipo de dado;
+assim como no exemplo.

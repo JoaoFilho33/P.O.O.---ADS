@@ -1,0 +1,7 @@
+5. Pesquise e, se encontrar, um exemplo onde o tipo any seria benéfico.
+Any é uma cláusula de escape do TS. Pode-se utilizar any para declarar uma seção do código e contornar as limitações da tipagem,
+ofertando maior flexibilidade para o programador, como um tipo coringa. 
+Se o tipo não for explicitado, e o TS não conseguir inferi-lo, o compilador utiliza any por padrão.
+
+O uso do any permite abrir mão da segurança promovida pelo TS por uma maior flexibilidade; e pode ser usado sempre que não quiser que um valor específico cause 
+erros de type-check. Podendo ser muito bem vindo em um estado de migração gradual.

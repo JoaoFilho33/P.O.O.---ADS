@@ -1,0 +1,4 @@
+6. Poderíamos dizer que a tipagem do TypeScript é fraca por uma variável do tipo number aceitar tanto inteiros como ponto flutuante?
+
+Não, a tipagem do TS é forte, no caso o tipo number apenas engloba ambos os tipos. Porém, uma variável tipo number inteira só poderá ser tipo inteiro. Sendo
+necessária uma alteração manual para que o contrário ocorra.

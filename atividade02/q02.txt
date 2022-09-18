@@ -1,0 +1,3 @@
+2. Qual o principal problema do uso de tipagem dinâmica?
+Em uma linguegem de tipagem dinâmica, a chance de erros de runtime aumenta drasticamente. 
+Pois, o tipo é inferido pelo valor do dado, e o type checking é feita em tempo de execução.
