@@ -1,0 +1,15 @@
+a)
+c1 = c2 e c3 = c1;
+logo, todos apontam para o mesmo objeto;
+
+c1.sacar(10) -> como todos compartilham o mesmo objeto, o saldo (100) diminui para 90 em c1, c2 e c3;
+
+c1.transferir(c2, 50) -> c1 e c2 compartilham o mesmo objeto, por isso, o valor será retirado de uma conta e recebido por ela mesma.
+O que deixa o saldo inalterado.
+
+Por isso, o saldo em todos os prints será 90.
+
+
+
+b)
+Esse objeto será liberado da memória pelo GC do JavaScript.

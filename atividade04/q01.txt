@@ -1,0 +1,3 @@
+1)
+Sim. Pois a variálvel "quantReservas" está sendo incrementada no método "adicionarReserva()", sem uma inicialização de 
+valor, o que resulta na não execução do código. Além de ser impossibilitado de ser localizado, por causa da não utilização do this.
