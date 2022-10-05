@@ -3,7 +3,7 @@ let output: string = ''
 let count = 1
 
 array.forEach((num: number) => {
-    if (count < array.length) {
+    if (count < array.length) {//count usado para quando chegar na última pos. do array o último traço não seja adicionado
         output += `${num}-`
         count++
     }
