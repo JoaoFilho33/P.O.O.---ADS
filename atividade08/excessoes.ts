@@ -27,3 +27,9 @@ export class PoupancaInvalidaError extends Error {
         super(message);
     }
 }
+
+export class InputError extends AplicacaoError {
+    constructor(message: string) {
+        super(message);
+    }
+}

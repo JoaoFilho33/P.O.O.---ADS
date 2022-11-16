@@ -1,7 +1,4 @@
-
 import { SaldoInsuficienteError, ValorInvalidoError, ContaInexistenteError, AplicacaoError } from "../excessoes";
-import { showMenu } from "../menu";
-
 
 export class Conta4 {
 
@@ -121,26 +118,37 @@ export class Banco4 {
     }
 
     public sacar(numero: string, valor: number): void {
-        let conta: Conta4 = this.consultar(numero);
-        if(conta instanceof Imposto) {
-            conta.debitar(valor);
+        try{
+            let conta: Conta4 = this.consultar(numero);
+            if(conta instanceof Imposto) {
+                conta.debitar(valor);
+            }
+            else {
+                conta.sacar(valor);
+            }
+        } catch(error) {
+            console.log((<Error>error).message);
         }
-        else {
-            conta.sacar(valor);
-        }
-        
     }
 
     public depositar(numero: string, valor: number): void {
-        let conta: Conta4 = this.consultar(numero);
-        conta.depositar(valor);
+        try{
+            let conta: Conta4 = this.consultar(numero);
+            conta.depositar(valor);
+        } catch(error) {
+            console.log((<Error>error).message);
+        }
     }
 
     public transferir(numCredito: string, numDebito: string, valor: number): void {
-        let conta1: Conta4 = this.consultar(numCredito);
-        let conta2: Conta4 = this.consultar(numDebito);
+        try{
+            let conta1: Conta4 = this.consultar(numCredito);
+            let conta2: Conta4 = this.consultar(numDebito);
 
-        conta2.transferir(conta1, valor);
+            conta2.transferir(conta1, valor);
+        } catch(error) {
+            console.log((<Error>error).message)
+        }
     }
 
     public quantidadeContas(): number {
@@ -187,5 +195,3 @@ export class Banco4 {
         }
     }
 }
-
-showMenu()

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Banco4 = exports.Imposto = exports.Poupanca = exports.Conta4 = void 0;
 const excessoes_1 = require("../excessoes");
-const menu_1 = require("../menu");
 class Conta4 {
     constructor(_numero, _saldo) {
         this._numero = _numero;
@@ -105,22 +104,37 @@ class Banco4 {
         }
     }
     sacar(numero, valor) {
-        let conta = this.consultar(numero);
-        if (conta instanceof Imposto) {
-            conta.debitar(valor);
+        try {
+            let conta = this.consultar(numero);
+            if (conta instanceof Imposto) {
+                conta.debitar(valor);
+            }
+            else {
+                conta.sacar(valor);
+            }
         }
-        else {
-            conta.sacar(valor);
+        catch (error) {
+            console.log(error.message);
         }
     }
     depositar(numero, valor) {
-        let conta = this.consultar(numero);
-        conta.depositar(valor);
+        try {
+            let conta = this.consultar(numero);
+            conta.depositar(valor);
+        }
+        catch (error) {
+            console.log(error.message);
+        }
     }
     transferir(numCredito, numDebito, valor) {
-        let conta1 = this.consultar(numCredito);
-        let conta2 = this.consultar(numDebito);
-        conta2.transferir(conta1, valor);
+        try {
+            let conta1 = this.consultar(numCredito);
+            let conta2 = this.consultar(numDebito);
+            conta2.transferir(conta1, valor);
+        }
+        catch (error) {
+            console.log(error.message);
+        }
     }
     quantidadeContas() {
         return this._contas.length;
@@ -160,4 +174,3 @@ class Banco4 {
     }
 }
 exports.Banco4 = Banco4;
-(0, menu_1.showMenu)();

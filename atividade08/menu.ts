@@ -1,15 +1,18 @@
 var input = require('prompt-sync')();
-
+import * as fs from "fs"
 import { Banco4, Conta4, Imposto, Poupanca } from "././banco/banco";
-
+import { InputError } from "./excessoes";
+import { ehValido } from "./funcoes";
 let banco: Banco4 = new Banco4()
 let opcao: string = ''
 
 let continuar: string = ''
 
-export function showMenu(): void {
+lerArquivoExterno();
+
 do {
-    console.log('Bem vindo\nDigite uma opção:');
+    try{
+        console.log('Bem vindo\nDigite uma opção:');
     console.log('1 - Cadastrar 2 - Consultar 3 - Sacar\n' +
         '4 - Depositar 5 - Excluir 6 - Transferir\n' +
         '7 – Totalizações 8 - Render Juros\n' +
@@ -44,11 +47,13 @@ do {
             renderJuros();
             break
     }
-
+    ehValido(opcao);
     continuar = input("\nPress <ENTER> to continue")
     console.clear()
-} while (opcao != '0')
-}
+    } catch(error: any) {
+        console.log((<Error>error).message);
+    }
+} while (opcao != '0');
 
 export function inserir(): void {
     console.log("\nCadastrar conta\n");
@@ -66,7 +71,7 @@ export function inserir(): void {
             contaImposto(numero, 0);
         }
     } catch(error: any) {
-        console.log(error.message);
+        console.log((<Error>error).message);
     }
 }
 
@@ -161,3 +166,27 @@ export function renderJuros(): void {
     }
 }
 
+function lerArquivoExterno(): void{
+    try {
+        let contas: Array<string> = fs.readFileSync("./contas/contas.txt").toString().split('\n')
+
+        for(let elemento of contas){
+            let dados = elemento.split(';')
+
+            let [tipo, num, saldo, taxa]: string[] = dados
+
+            if(tipo == 'P'){
+                let conta: Poupanca = new Poupanca(num, Number(saldo), Number(taxa))
+                banco.inserir(conta)
+            }else if(tipo == 'I'){
+                let conta: Imposto = new Imposto(num, Number(saldo), Number(taxa))
+                banco.inserir(conta)
+            }else if(tipo == 'C'){
+                let conta: Conta4 = new Conta4(num, Number(saldo))
+                banco.inserir(conta)
+            }
+        }
+    } catch (error: any) {
+        console.log(error.message)
+    }
+}
