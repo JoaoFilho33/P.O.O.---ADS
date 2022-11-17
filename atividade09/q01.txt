@@ -1,0 +1,2 @@
+1)
+Não, pq classes abstratas não podem ser instanciadas, por ser uma classe incompleta

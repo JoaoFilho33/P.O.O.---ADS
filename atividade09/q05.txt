@@ -1,0 +1,3 @@
+5)
+Pois o código está instanciando um array de objetos do tipo FiguraGeometrica, e não um objeto de tipo FiguraGeometrica,
+que resultaria em um erro.
