@@ -64,7 +64,7 @@ export class Imposto extends Conta4 {
         this._taxaDesconto = taxaDesconto;
     }
 
-    debitar(valor: number): void {
+        debitar(valor: number): void {
         let total = valor + valor * (this._taxaDesconto/100);
         super.sacar(total);
     }

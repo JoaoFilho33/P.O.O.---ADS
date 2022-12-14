@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator" 
+}
+
+model Estoque {
+  id  Int  @id @default(autoincrement())
+  capacidade  Int
+  produto Produto[]
+}
+
+model Produto {
+  id  Int  @id @default(autoincrement())
+  nome  String
+  marca String
+  valor Float
+  quantidade  Int
+  dataValidade  DateTime
+  produto Estoque @relation(fields: [id], references: [id])
+  produtoId Int
+  perecivel Boolean 
+}

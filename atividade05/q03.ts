@@ -1,14 +1,12 @@
 var input = require('prompt-sync')();
 
-class Conta3 {
+class Conta4 {
     numero: string;
     saldo: number;
-    titular: string;
 
-    constructor(numero: string, saldo: number, titular: string) {
+    constructor(numero: string, saldo: number) {
         this.numero = numero;
         this.saldo = saldo;
-        this.titular = titular;
     }
 
     sacar(valor: number): boolean {
@@ -29,7 +27,7 @@ class Conta3 {
         return this.saldo;
     }
 
-    transferir(contaDestino: Conta3, valor: number) {
+    transferir(contaDestino: Conta4, valor: number) {
         if (this.sacar(valor)) {
             contaDestino.depositar(valor)
             return true;
@@ -41,20 +39,20 @@ class Conta3 {
 }
 
 class Banco3 {
-    contas: Conta3[] = [];
+    contas: Conta4[] = [];
 
-    constructor(contas: Conta3[] = []) {
+    constructor(contas: Conta4[] = []) {
         this.contas = contas;
     }
 
-    inserir(conta: Conta3): void {
+    inserir(conta: Conta4): void {
         if (this.consultarIndice(conta.numero) == -1) {
             this.contas.push(conta);
         }
     }
 
-    consultarSaldo(numero: string): Conta3 {
-        let contaProcurada!: Conta3
+    consultarSaldo(numero: string): Conta4 {
+        let contaProcurada!: Conta4
 
         for (let c of this.contas) {
             if (c.numero == numero) {
@@ -78,7 +76,7 @@ class Banco3 {
     }
 
     sacar(numero: string, valor: number) {
-        let conta: Conta3 = this.consultarSaldo(numero);
+        let conta: Conta4 = this.consultarSaldo(numero);
 
         if (conta != null) {
             conta.sacar(valor);
@@ -86,7 +84,7 @@ class Banco3 {
     }
 
     depositar(numero: string, valor: number): void {
-        let conta: Conta3 = this.consultarSaldo(numero)
+        let conta: Conta4 = this.consultarSaldo(numero)
 
         if (conta != null) {
             conta.depositar(valor)
@@ -94,8 +92,8 @@ class Banco3 {
     }
 
     transferir(numCredito: string, numDebito: string, valor: number): void {
-        let conta1: Conta3 = this.consultarSaldo(numCredito)
-        let conta2: Conta3 = this.consultarSaldo(numDebito)
+        let conta1: Conta4 = this.consultarSaldo(numCredito)
+        let conta2: Conta4 = this.consultarSaldo(numDebito)
 
         if (conta1 != null && conta2 != null) {
             conta2.transferir(conta1, valor)
@@ -177,8 +175,8 @@ do {
 function inserir(): void {
     console.log("\nCadastrar conta\n");
     let numero: string = input('Digite o número da conta: ');
-    let conta: Conta3;
-    conta = new Conta3(numero, 0, "João");
+    let conta: Conta4;
+    conta = new Conta4(numero, 0);
     banco.inserir(conta);
 }
 

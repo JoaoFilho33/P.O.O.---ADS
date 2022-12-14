@@ -1,23 +1,23 @@
-var Carro = /** @class */ (function () {
-    function Carro(c, a, v) {
+"use strict";
+class Carro {
+    constructor(c, a, v) {
         this.cor = c;
         this.ano = a;
         this.valor = v;
     }
-    Carro.prototype.getValor = function () {
+    getValor() {
         return this.valor;
-    };
-    Carro.prototype.setValor = function (valor) {
+    }
+    setValor(valor) {
         this.valor = valor;
-    };
-    Carro.prototype.getLog = function () {
+    }
+    getLog() {
         console.log("Segue o log dessa informação: ");
         this.getInfo();
-    };
-    Carro.prototype.getInfo = function () {
-        console.log("".concat(this.cor, ", ").concat(this.ano, ", ").concat(this.valor));
-    };
-    return Carro;
-}());
-var c = new Carro("preto", 2020, 20000);
+    }
+    getInfo() {
+        console.log(`${this.cor}, ${this.ano}, ${this.valor}`);
+    }
+}
+let c = new Carro("preto", 2020, 20000);
 c.getLog();
